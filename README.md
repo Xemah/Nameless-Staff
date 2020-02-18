@@ -1,0 +1,14 @@
+# STAFF MODULE
+
+### [INSTALLATION]
+- Upload all the contents of "upload" directory to the root directory of your NamelessMC installation.
+- Then login to your staff panel, and head over to modules section and click "Install" button.
+- Then enable the newly appeared module named "Staff".
+- Thats it!
+
+## [NOTE]
+- This module only contains the support for **Default** and **DefaultRevamp** template.
+
+### [CONTACT]
+- Discord: https://xemah.com/discord
+- Email: contact@xemah.com
