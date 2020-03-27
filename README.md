@@ -10,5 +10,5 @@
 - This module only contains the support for **Default** and **DefaultRevamp** template.
 
 ### [CONTACT]
-- Discord: https://xemah.com/discord
+- Discord: https://xemah.com/support
 - Email: contact@xemah.com
