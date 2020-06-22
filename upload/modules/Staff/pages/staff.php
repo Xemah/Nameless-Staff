@@ -8,39 +8,44 @@
 
 define('PAGE', 'staff');
 
-$page_title = 'Staff';
+$page_title = $cache->setCache('staff_module')->retrieve('page_title');
 require_once(ROOT_PATH . '/core/templates/frontend_init.php');
 
-$groups = $queries->orderWhere('groups', 'staff = 1', '`order`');
+$staffGroupsQuery = $queries->orderWhere('groups', 'staff = 1', '`order`');
 
-foreach ($groups as $key => $group) {
+$staffGroups = [];
+foreach ($staffGroupsQuery as $key => $group) {
 
-	$staff_groups[$key] = array(
+	$staffGroups[$key] = [
 		'id' => $group->id,
 		'name' => $group->name,
 		'style' => $group->group_username_css,
-	);
+	];
 
-	$members = $queries->getWhere('users', array('group_id', '=', $group->id));
-	foreach ($members as $member) {
-		$staff_groups[$key]['members'][] = array(
+	$groupMembersQuery = $queries->getWhere('users', ['group_id', '=', $group->id]);
+	foreach ($groupMembersQuery as $member) {
+		$staffGroups[$key]['members'][] = [
 			'id' => $member->id,
+			'avatar' => $user->getAvatar($member->id),
 			'profile' => URL::build('/profile/' . Output::getClean($member->username)),
-			'style' => $group->group_username_css,
 			'username' => $member->username,
 			'nickname' => $member->nickname,
-			'avatar' => $user->getAvatar($member->id),
-			'title' => Output::getClean($member->user_title)
-		);
+			'style' => $group->group_username_css,
+			'title' => Output::getClean($member->user_title),
+		];
 	}
+	
 }
 
-$smarty->assign('STAFF_GROUPS', $staff_groups);
+$smarty->assign([
+	'TITLE' => $page_title,
+	'STAFF_GROUPS' => $staffGroups
+]);
 
-Module::loadPage($user, $pages, $cache, $smarty, array($navigation, $cc_nav, $mod_nav), $widgets);
+Module::loadPage($user, $pages, $cache, $smarty, [$navigation, $cc_nav, $mod_nav], $widgets);
 
-$page_load = microtime(true) - $start;
-define('PAGE_LOAD_TIME', str_replace('{x}', round($page_load, 3), $language->get('general', 'page_loaded_in')));
+$pageLoadTime = microtime(true) - $start;
+define('PAGE_LOAD_TIME', str_replace('{x}', round($pageLoadTime, 3), $language->get('general', 'page_loaded_in')));
 
 $template->onPageLoad();
 
