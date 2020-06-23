@@ -18,36 +18,23 @@ class StaffModule extends Module {
 		];
 
 		parent::__construct($this, $module['name'], $module['author'], $module['version'], $module['namelessVersion']);
-		$this->init($cache);
-
-		$cache->setCache('staff_module');
-        $pages->add($module['name'], $cache->retrieve('link_path'), 'pages/staff.php', 'staff', true);
-		$pages->add($module['name'], '/panel/staff', 'pages/panel/staff.php');
 
 		$this->_module = $module; 
 		$this->_language = $langauge;
 		$this->_staffLanguage = $staffLanguage;
 		$this->_queries = $queries;
+		$this->_cache = $cache;
+		
+		$this->init();
+
+		$cache->setCache('staff_module');
+        $pages->add($module['name'], $cache->retrieve('link_path'), 'pages/staff.php', 'staff', true);
+		$pages->add($module['name'], '/panel/staff', 'pages/panel/staff.php');
         
 	}
 
 	public function onInstall() {
-		
-		try {
-
-			$group = $this->_queries->getWhere('groups', ['id', '=', 2]);
-			$group = $group[0];
-			
-			$groupPermissions = json_decode($group->permissions, true);
-			$groupPermissions['staff.settings'] = 1;
-			
-			$groupPermissions = json_encode($groupPermissions);
-			$this->_queries->update('groups', 2, ['permissions' => $groupPermissions]);
-
-		} catch (Exception $e) {
-			// ...
-		}
-
+		// ...
 	}
 
 	public function onUninstall() {
@@ -108,41 +95,65 @@ class StaffModule extends Module {
         
 	}
 
-	private function init($cache) {
+	private function init() {
+		
+		$this->_cache->setCache('staff_module');
 
-		$cache->setCache('staff_module');
-		if (!$cache->isCached('page_title')) {
-			$cache->store('page_title', 'Staff');
+		if (!$this->_cache->isCached('page_title')) {
+			$this->_cache->store('page_title', 'Staff');
 		}
 
-		$cache->setCache('staff_module');
-		if (!$cache->isCached('link_path')) {
-			$cache->store('link_path', '/staff');
+		if (!$this->_cache->isCached('link_path')) {
+			$this->_cache->store('link_path', '/staff');
 		}
 		
-		$cache->setCache('staff_module');
-		if (!$cache->isCached('link_location')) {
-			$cache->store('link_location', 1);
+		if (!$this->_cache->isCached('link_location')) {
+			$this->_cache->store('link_location', 1);
 		}
 
-		$cache->setCache('navbar_order');
-		if (!$cache->isCached('staff_order')) {
-			$cache->store('staff_order', 100);
+		$this->_cache->setCache('navbar_order');
+		
+		if (!$this->_cache->isCached('staff_order')) {
+			$this->_cache->store('staff_order', 100);
 		}
 
-		$cache->setCache('navbar_icon');
-		if (!$cache->isCached('staff_icon')) {
-			$cache->store('staff_icon', '<i class="icon fas fa-members fa-fw"></i>');
+		$this->_cache->setCache('navbar_icon');
+
+		if (!$this->_cache->isCached('staff_icon')) {
+			$this->_cache->store('staff_icon', '<i class="icon fas fa-members fa-fw"></i>');
 		}
 		
-		$cache->setCache('panel_sidebar');
-		if (!$cache->isCached('staff_order')) {
-			$cache->store('staff_order', 100);
+		$this->_cache->setCache('panel_sidebar');
+
+		if (!$this->_cache->isCached('staff_order')) {
+			$this->_cache->store('staff_order', 100);
 		}
 
-		$cache->setCache('panel_sidebar');
-		if (!$cache->isCached('staff_icon')) {
-			$cache->store('staff_icon', '<i class="nav-icon fas fa-sliders-h fa-fw"></i>');
+		if (!$this->_cache->isCached('staff_icon')) {
+			$this->_cache->store('staff_icon', '<i class="nav-icon fas fa-sliders-h fa-fw"></i>');
+		}
+				
+		$this->_cache->setCache('staff_module');
+		
+		if (!$this->_cache->isCached('init.permissions')) {
+
+			try {
+
+				$group = $this->_queries->getWhere('groups', ['id', '=', 2]);
+				$group = $group[0];
+				
+				$groupPermissions = json_decode($group->permissions, true);
+				$groupPermissions['staff.settings'] = 1;
+				
+				$groupPermissions = json_encode($groupPermissions);
+				$this->_queries->update('groups', 2, ['permissions' => $groupPermissions]);
+	
+				$this->_cache->store('init.permissions', 1);
+	
+			} catch (Exception $e) {
+				// ...
+			}
+
 		}
 
 	}
