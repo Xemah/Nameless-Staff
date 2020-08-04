@@ -59,7 +59,7 @@ $fields = [
 		'type' => 'textbox',
 		'name' => 'staff_icon',
 		'id' => 'navigationIcon',
-		'cache' => 'navbar_icon',
+		'cache' => 'navbar_icons',
 	],
 
 	'navigationOrder' => [

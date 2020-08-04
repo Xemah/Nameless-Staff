@@ -63,7 +63,7 @@ class StaffModule extends Module {
 		$cache->setCache('navbar_order');
 		$staffNavigationOrder = $cache->retrieve('staff_order');
 
-		$cache->setCache('navbar_icon');
+		$cache->setCache('navbar_icons');
 		$staffNavigationIcon = $cache->retrieve('staff_icon');
 		
 		switch ($staffLinkLocation) {
@@ -117,7 +117,7 @@ class StaffModule extends Module {
 			$this->_cache->store('staff_order', 100);
 		}
 
-		$this->_cache->setCache('navbar_icon');
+		$this->_cache->setCache('navbar_icons');
 
 		if (!$this->_cache->isCached('staff_icon')) {
 			$this->_cache->store('staff_icon', '<i class="icon fas fa-members fa-fw"></i>');
