@@ -120,7 +120,7 @@ class StaffModule extends Module {
 		$this->_cache->setCache('navbar_icons');
 
 		if (!$this->_cache->isCached('staff_icon')) {
-			$this->_cache->store('staff_icon', '<i class="icon fas fa-members fa-fw"></i>');
+			$this->_cache->store('staff_icon', '<i class="icon fas fa-users fa-fw"></i>');
 		}
 		
 		$this->_cache->setCache('panel_sidebar');
