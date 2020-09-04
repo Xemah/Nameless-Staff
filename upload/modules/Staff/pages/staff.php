@@ -49,6 +49,8 @@ define('PAGE_LOAD_TIME', str_replace('{x}', round($pageLoadTime, 3), $language->
 
 $template->onPageLoad();
 
+$smarty->assign('WIDGETS', $widgets->getWidgets());
+
 require(ROOT_PATH . '/core/templates/navbar.php');
 require(ROOT_PATH . '/core/templates/footer.php');
 
