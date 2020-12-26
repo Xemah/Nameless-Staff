@@ -6,25 +6,7 @@
  *
 **/
 
-if (!$user->isLoggedIn()) {
-	Redirect::to(URL::build('/login'));
-	die();
-}
-
-if (!$user->canViewACP()) {
-	Redirect::to(URL::build('/'));
-	die();
-}
-
-if (!$user->isAdmLoggedIn()) {
-	Redirect::to(URL::build('/panel/auth'));
-	die();
-}
-
-if (!$user->hasPermission('staff.settings')) {
-	require_once(ROOT_PATH . '/403.php');
-	die();
-}
+$user->handlePanelPageLoad(StaffModule::$PANEL_PERMISSION);
 
 define('PAGE', 'panel');
 define('PARENT_PAGE', 'staff');

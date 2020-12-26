@@ -18,20 +18,23 @@ foreach ($staffGroupsQuery as $key => $group) {
 
 	$staffGroups[$key] = [
 		'id' => $group->id,
-		'name' => $group->name,
-		'style' => $group->group_username_css,
+		'name' => Output::getClean($group->name),
+		'color' => $group->group_username_color,
+		'members' => []
 	];
 
-	$groupMembersQuery = $queries->getWhere('users', ['group_id', '=', $group->id]);
+	$groupMembersQuery = $queries->getWhere('users_groups', ['group_id', '=', $group->id]);
 	foreach ($groupMembersQuery as $member) {
+		$staffMember = new User($member->user_id);
 		$staffGroups[$key]['members'][] = [
-			'id' => $member->id,
-			'avatar' => $user->getAvatar($member->id),
-			'profile' => URL::build('/profile/' . Output::getClean($member->username)),
-			'username' => $member->username,
-			'nickname' => $member->nickname,
-			'style' => $group->group_username_css,
-			'title' => Output::getClean($member->user_title),
+			'id' => $staffMember->data()->id,
+			'uuid' => $staffMember->data()->uuid,
+			'avatar' => $staffMember->getAvatar(),
+			'profile' => $staffMember->getProfileURL(),
+			'username' => $staffMember->getDisplayname(true),
+			'nickname' => $staffMember->getDisplayname(),
+			'style' => $staffMember->getGroupClass(),
+			'title' => Output::getClean($staffMember->data()->user_title),
 		];
 	}
 	
@@ -49,7 +52,8 @@ define('PAGE_LOAD_TIME', str_replace('{x}', round($pageLoadTime, 3), $language->
 
 $template->onPageLoad();
 
-$smarty->assign('WIDGETS', $widgets->getWidgets());
+$smarty->assign('WIDGETS_LEFT', $widgets->getWidgets('left'));
+$smarty->assign('WIDGETS_RIGHT', $widgets->getWidgets('right'));
 
 require(ROOT_PATH . '/core/templates/navbar.php');
 require(ROOT_PATH . '/core/templates/footer.php');
