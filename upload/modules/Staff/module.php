@@ -88,7 +88,7 @@ class StaffModule extends Module
 			$group = $group[0];
 			
 			$groupPermissions = json_decode($group->permissions, true);
-			$groupPermissions['staff.settings'] = 1;
+			$groupPermissions[self::$PANEL_PERMISSION] = 1;
 			
 			$groupPermissions = json_encode($groupPermissions);
 			$this->_queries->update('groups', 2, ['permissions' => $groupPermissions]);
