@@ -1,6 +1,6 @@
 {include file='staff/includes/header.tpl'}
 				
-<div class="card">
+<div class="card shadow">
 	<div class="card-body">
 		{if count($FIELDS)}
 			<form action="" method="post">
