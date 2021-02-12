@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	]);
 	
 	if (!$validation->passed()) {
-		Session::flash('error', $chatboxLanguage->get('general', 'errorEdit'));
+		Session::flash('error', $staffLanguage->get('general', 'errorEdit'));
 		Redirect::to(URL::build('/panel/staff'));
 	}
 
