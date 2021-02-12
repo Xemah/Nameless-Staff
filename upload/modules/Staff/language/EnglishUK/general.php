@@ -23,8 +23,8 @@ $language = [
 	'navbarMoreDropdown' => 'Navbar "More" Dropdown',
 	'footer' => 'Footer',
 	'none' => 'None',
-	'navigationIcon' => 'Navigation Icon',
-	'navigationOrder' => 'Navigation Order',
+	'navIcon' => 'Navigation Icon',
+	'navOrder' => 'Navigation Order',
 
 	'submit' => 'Submit',
 	'cancel' => 'Cancel',

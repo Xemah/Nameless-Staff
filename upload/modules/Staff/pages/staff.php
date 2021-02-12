@@ -8,7 +8,9 @@
 
 define('PAGE', 'staff');
 
-$page_title = $cache->setCache('staff_module')->retrieve('page_title');
+$settings = StaffModule::getSettings($cache);
+
+$page_title = $settings['pageTitle'];
 require_once(ROOT_PATH . '/core/templates/frontend_init.php');
 
 $staffGroupsQuery = $queries->orderWhere('groups', 'staff = 1', '`order`');

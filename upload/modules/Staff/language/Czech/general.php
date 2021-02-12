@@ -25,8 +25,8 @@ $language = [
 	'navbarMoreDropdown' => 'Rozbalovací nabídka',
 	'footer' => 'Zápatí',
 	'none' => 'Žádné',
-	'navigationIcon' => 'Ikona v navigaci',
-	'navigationOrder' => 'Pořadí v navigaci',
+	'navIcon' => 'Ikona v navigaci',
+	'navOrder' => 'Pořadí v navigaci',
 
 	'submit' => 'Potvrdit',
 	'cancel' => 'Zrušit',

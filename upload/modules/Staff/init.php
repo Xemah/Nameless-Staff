@@ -9,4 +9,4 @@
 $staffLanguage = new Language(__DIR__ . '/language', LANGUAGE);
 
 require_once(__DIR__ . '/module.php');
-$module = new StaffModule($language, $staffLanguage, $user, $pages, $navigation, $queries, $smarty, $cache);
+$module = new StaffModule($staffLanguage, $pages, $queries, $cache);
