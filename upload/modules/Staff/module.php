@@ -92,8 +92,8 @@ class StaffModule extends Module
 			'pageTitle' => 'Staff',
 			'linkPath' => '/staff',
 			'linkLocation' => '1',
-			'navIcon' => '99',
-			'navOrder' => '<i class="icon fas fa-users fa-fw"></i>'
+			'navIcon' => '<i class="icon fas fa-users fa-fw"></i>',
+			'navOrder' => '99'
 		];
 
 		foreach (array_keys($settings) as $key) {
