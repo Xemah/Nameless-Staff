@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$linkLocationInput = $_POST['linkLocation'];
 	$cache->store('linkLocation', isset($linkLocationInput) ? $linkLocationInput : '1');
 
-	$cache->setCache('navbar_icon');
+	$cache->setCache('navbar_icons');
 	$navIconInput = $_POST['navIcon'];
 	$cache->store('staff_icon', isset($navIconInput) ? $navIconInput : '<i class="icon fas fa-users fa-fw"></i>');
 
