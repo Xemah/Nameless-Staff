@@ -4,6 +4,8 @@
  *	STAFF PAGE MODULE
  *	By Xemah | https://xemah.com
  *
+ *	FRENCH TRANSLATION
+ *	By Lou (https://github.com/newlynameds/Nameless-Staff), ...
 **/
 
 $language = [
