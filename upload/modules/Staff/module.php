@@ -92,7 +92,7 @@ class StaffModule extends Module
 			'pageTitle' => 'Staff',
 			'linkPath' => '/staff',
 			'linkLocation' => '1',
-			'navIcon' => '<i class="icon fas fa-users fa-fw"></i>',
+			'navIcon' => Output::getClean('<i class="icon fas fa-users fa-fw"></i>'),
 			'navOrder' => '99'
 		];
 
