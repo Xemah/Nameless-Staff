@@ -89,6 +89,8 @@ define('PAGE_LOAD_TIME', str_replace('{x}', round($pageLoadTime, 3), $language->
 $template->onPageLoad();
 require(ROOT_PATH . '/core/templates/panel_navbar.php');
 
+array_push($smarty->security_policy->secure_dir, __DIR__);
+
 try {
 	$template->displayTemplate('staff.tpl', $smarty);
 } catch (Exception $e) {
