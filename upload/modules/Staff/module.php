@@ -17,7 +17,7 @@ class StaffModule extends Module
 		$module = [
 			'name' => 'Staff',
 			'author' => '<a href="https://xemah.com" target="_blank">Xemah</a>',
-			'version' => '2.6',
+			'version' => '2.6.1',
 			'namelessVersion' => '2.0.0-pr10'
 		];
 
