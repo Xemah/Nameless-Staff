@@ -47,7 +47,7 @@ $smarty->assign([
 	'STAFF_GROUPS' => $staffGroups
 ]);
 
-Module::loadPage($user, $pages, $cache, $smarty, [$navigation, $cc_nav, $mod_nav], $widgets);
+Module::loadPage($user, $pages, $cache, $smarty, [$navigation, $cc_nav, $mod_nav], $widgets, $template);
 
 $pageLoadTime = microtime(true) - $start;
 define('PAGE_LOAD_TIME', str_replace('{x}', round($pageLoadTime, 3), $language->get('general', 'page_loaded_in')));
