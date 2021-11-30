@@ -101,18 +101,18 @@ class StaffModule extends Module
 			if ($key === 'navIcon') {
 				$cache->setCache('navbar_icons');
 				if ($cache->isCached('staff_icon')) {
-					$settings[$key] = $cache->retrieve('staff_icon');
+					$settings[$key] = Output::getClean($cache->retrieve('staff_icon'));
 				}
 			} else if ($key === 'navOrder') {
 				$cache->setCache('navbar_order');
 				if ($cache->isCached('staff_order')) {
-					$settings[$key] = $cache->retrieve('staff_order');
+					$settings[$key] = Output::getClean($cache->retrieve('staff_order'));
 				}
 			} else {
 				if ($cache->isCached($key)) {
 					$value = $cache->retrieve($key);
 					$arr = json_decode($value);
-					$settings[$key] = $arr ? $arr : $value;
+					$settings[$key] = $arr ? $arr : Output::getClean($value);
 				}
 			}
 		}
