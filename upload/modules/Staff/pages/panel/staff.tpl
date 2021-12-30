@@ -69,7 +69,7 @@
 											<option value="1"{if ($SETTINGS.linkLocation == '1')} selected{/if}>{$STAFF_LANGUAGE.navbar}</option>
 											<option value="2"{if ($SETTINGS.linkLocation == '2')} selected{/if}>{$STAFF_LANGUAGE.navbarMoreDropdown}</option>
 											<option value="3"{if ($SETTINGS.linkLocation == '3')} selected{/if}>{$STAFF_LANGUAGE.footer}</option>
-											<option value="1"{if ($SETTINGS.linkLocation == '0')} selected{/if}>{$STAFF_LANGUAGE.none}</option>
+											<option value="4"{if ($SETTINGS.linkLocation == '4')} selected{/if}>{$STAFF_LANGUAGE.none}</option>
 										</select>
 									</div>
 									<div class="form-group">
