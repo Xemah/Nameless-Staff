@@ -1,0 +1,23 @@
+{
+    "general/cancel": "Cancelar",
+    "general/dashboard": "Panel administrativo",
+    "general/error": "Error",
+    "general/errorEdit": "Por favor, asegúrese de que los campos están rellenados correctamente.",
+    "general/errorToken": "Token inválido. Por favor, inténtelo de nuevo.",
+    "general/footer": "Pie de página",
+    "general/linkLocation": "Ubicación del vínculo",
+    "general/linkPath": "Ruta de enlace",
+    "general/navIcon": "Icono en la barra de navegación",
+    "general/navOrder": "Orden en la barra de navegación",
+    "general/navbar": "Barra de navegación",
+    "general/navbarMoreDropdown": "Desplegable \"Más\" en la barra de navegación",
+    "general/none": "Ninguna",
+    "general/pageTitle": "Título de la página",
+    "general/panel": "Panel administrativo",
+    "general/permission": "Panel administrativo > Configuración de la página del personal",
+    "general/settings": "Staff",
+    "general/settingsUpdated": "La configuración se ha actualizado correctamente.",
+    "general/submit": "Enviar",
+    "general/success": "Éxito",
+    "general/title": "Personal administrativo"
+}

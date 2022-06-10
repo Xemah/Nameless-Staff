@@ -1,0 +1,21 @@
+{
+    "general/cancel": "Cancel",
+    "general/error": "Error",
+    "general/errorEdit": "Please ensure the fields are filled correctly.",
+    "general/errorToken": "Invalid token! Please try again.",
+    "general/footer": "Footer",
+    "general/linkLocation": "Link Location",
+    "general/linkPath": "Link Path",
+    "general/navIcon": "Navigation Icon",
+    "general/navOrder": "Navigation Order",
+    "general/navbar": "Navbar",
+    "general/navbarMoreDropdown": "Navbar \"More\" Dropdown",
+    "general/none": "None",
+    "general/pageTitle": "Page Title",
+    "general/panel": "Panel",
+    "general/permission": "Panel > Staff",
+    "general/settings": "Staff",
+    "general/settingsUpdated": "Settings has been successfully updated.",
+    "general/success": "Success",
+    "general/title": "Staff"
+}

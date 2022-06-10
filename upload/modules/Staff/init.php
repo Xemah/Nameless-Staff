@@ -1,12 +1,12 @@
 <?php
 
 /**
- *	STAFF PAGE MODULE
- *	By Xemah | https://xemah.com
+ *    STAFF PAGE MODULE
+ *    By Xemah | https://xemah.com
  *
 **/
 
-$staffLanguage = new Language(__DIR__ . '/language', LANGUAGE);
+$staffLanguage = new Language(ROOT_PATH . '/modules/Staff/language', LANGUAGE);
 
-require_once(__DIR__ . '/module.php');
+require_once(ROOT_PATH . '/modules/Staff/module.php');
 $module = new StaffModule($staffLanguage, $pages, $queries, $cache);
