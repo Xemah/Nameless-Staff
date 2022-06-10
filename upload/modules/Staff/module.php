@@ -29,7 +29,6 @@ class StaffModule extends Module
         $pages->add($module['name'], $settings['linkPath'], 'pages/staff.php', 'staff', true);
 
         $this->staffLanguage = $staffLanguage;
-        $this->queries = $queries;
     }
 
     public function onInstall() {}
