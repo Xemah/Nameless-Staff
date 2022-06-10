@@ -1,0 +1,23 @@
+{
+    "general/cancel": "Annulé",
+    "general/dashboard": "Tableau de Bord",
+    "general/error": "Erreur",
+    "general/errorEdit": "Merci de rentrer les champs correctement.",
+    "general/errorToken": "Invalid token! Réessayez encore.",
+    "general/footer": "Footer",
+    "general/linkLocation": "Position du lien",
+    "general/linkPath": "Lien de la page",
+    "general/navIcon": "Icon du lien",
+    "general/navOrder": "Ordre Nav.",
+    "general/navbar": "Navbar",
+    "general/navbarMoreDropdown": "Navbar \"Plus\" Dropdown",
+    "general/none": "Aucun(e)",
+    "general/pageTitle": "Titre de la page",
+    "general/panel": "Panel",
+    "general/permission": "Panel > Page Staff",
+    "general/settings": "Page Staff",
+    "general/settingsUpdated": "Les changements ont était modifié avec succès.",
+    "general/submit": "Envoyez",
+    "general/success": "Succès",
+    "general/title": "Staff"
+}

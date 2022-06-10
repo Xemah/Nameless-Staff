@@ -1,0 +1,23 @@
+{
+    "general/cancel": "Zrušit",
+    "general/dashboard": "Nástěnka",
+    "general/error": "Chyba",
+    "general/errorEdit": "Ujistěte se, že jste správně vyplnili všechna pole.",
+    "general/errorToken": "Neplatný token! Zkuste to prosím znovu.",
+    "general/footer": "Zápatí",
+    "general/linkLocation": "Umístění odkazu",
+    "general/linkPath": "Cesta ke stránce",
+    "general/navIcon": "Ikona v navigaci",
+    "general/navOrder": "Pořadí v navigaci",
+    "general/navbar": "Navigační lišta",
+    "general/navbarMoreDropdown": "Rozbalovací nabídka",
+    "general/none": "Žádné",
+    "general/pageTitle": "Název stránky",
+    "general/panel": "Panel",
+    "general/permission": "Panel > Nastavení stránky týmu",
+    "general/settings": "Nastavení stránky týmu",
+    "general/settingsUpdated": "Nastavení byla úspěšně aktualizována.",
+    "general/submit": "Potvrdit",
+    "general/success": "Úspěch",
+    "general/title": "Tým"
+}
