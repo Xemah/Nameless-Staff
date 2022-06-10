@@ -7,7 +7,7 @@
 - Thats it!
 
 ## [NOTE]
-- This module only contains the support for **DefaultRevamp** template.
+- This module only contains the support for **DefaultRevamp** template and **Default** template (StaffCP).
 
 ### [CONTACT]
 - Discord: https://xemah.com/support
