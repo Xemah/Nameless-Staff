@@ -6,6 +6,11 @@
  *
 **/
 
+if ($user->handlePanelPageLoad(StaffModule::$PANEL_PERMISSION)) {
+	require_once(ROOT_PATH . '/403.php');
+	die();
+};
+
 define('PAGE', 'panel');
 define('PARENT_PAGE', 'staff');
 define('PANEL_PAGE', 'staff');
