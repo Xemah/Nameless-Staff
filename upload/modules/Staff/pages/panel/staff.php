@@ -6,7 +6,7 @@
  *
 **/
 
-if ($user->handlePanelPageLoad(StaffModule::$PANEL_PERMISSION)) {
+if (!$user->handlePanelPageLoad(StaffModule::$PANEL_PERMISSION)) {
 	require_once(ROOT_PATH . '/403.php');
 	die();
 };
