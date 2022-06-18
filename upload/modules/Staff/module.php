@@ -42,7 +42,15 @@ class StaffModule extends Module
 
 	public function onEnable()
 	{
-		// ...
+		try {
+			$group = DB::getInstance()->get('groups', ['id', '=', 2])->first();
+			$groupPermissions = json_decode($group->permissions, TRUE);
+			$groupPermissions['administrator'] = 1;
+			$groupPermissions = json_encode($groupPermissions);
+			DB::getInstance()->update('groups', ['id', '=', 2], ['permissions' => $groupPermissions]);
+		} catch (Exception $e) {
+			// ...
+		}
 	}
 
 	public function onDisable()
