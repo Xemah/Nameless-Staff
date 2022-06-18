@@ -88,7 +88,7 @@ class StaffModule extends Module
 
 		if (!$file && !$term) {
 			$language = file_get_contents(__DIR__ . '/language/' . self::$_language->getActiveLanguage() . '.json');
-			if (!$language) $language = file_get_contents(__DIR__ . '/_language/en_UK.json');
+			if (!$language) $language = file_get_contents(__DIR__ . '/language/en_UK.json');
 			$language = json_decode($language, true);
 
 			$languageArr = [];
