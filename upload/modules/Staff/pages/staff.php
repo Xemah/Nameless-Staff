@@ -28,9 +28,15 @@ foreach ($staffGroupsQuery as $key => $group) {
 	$groupMembersQuery = DB::getInstance()->get('users_groups', ['group_id', '=', $group->id])->results();
 	foreach ($groupMembersQuery as $member) {
 		$staffMember = new User($member->user_id);
+		$integrationUser = $staffMember->getIntegration('Minecraft');
+        	if ($integrationUser != null) {
+			$uuid = $integrationUser->data()->identifier;
+        	} else {
+			$uuid = '';
+        	}
 		$staffGroups[$key]['members'][] = [
 			'id' => $staffMember->data()->id,
-			'uuid' => $staffMember->data()->uuid,
+			'uuid' => $uuid,
 			'avatar' => $staffMember->getAvatar(),
 			'profile' => $staffMember->getProfileURL(),
 			'username' => $staffMember->getDisplayname(true),
